@@ -15,8 +15,10 @@ export const StyledSignature = styled.section`
 
 export const StyledSignatureHeader = styled.header`
   display: block;
+  padding: 32px 0;
 
   ${StyledWrapper} {
+    justify-content: flex-end;
     align-items: center;
   }
 `;
@@ -97,17 +99,24 @@ export const StyledSignaturePhone = styled.p`
 `;
 
 export const StyledNotice = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
   margin: 0;
   padding: 20px 30px;
+  font-weight: 700;
   color: ${colors.white};
-  background-color: ${colors.blue400};
-  border-radius: 4px;
+  text-align: center;
+  background-color: ${(props) =>
+    props.company === 'faster' ? colors.blue400 : colors.red400};
   opacity: ${(props) => (props.copied ? '1' : '0')};
   transform: ${(props) =>
-    props.copied ? 'translateX(0)' : 'translateX(500px)'};
+    props.copied ? 'translateY(0)' : 'translateY(200px)'};
   transform: ${(props) =>
     props.copied
       ? 'translate3d(0, 0, 0)'
-      : 'translate3d(500px, 0, 0)'};
+      : 'translate3d(0, 200px, 0)'};
   transition: all 0.2s linear;
 `;
