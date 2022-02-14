@@ -34,8 +34,10 @@ export const StyledSignatureHeader = styled.header`
     background-repeat: no-repeat;
     background-size: 24px auto;
     outline: none;
+    transition: all 0.3s ease-out;
 
     &:hover {
+      padding-right: 42px;
       color: ${colors.gray400};
     }
   }

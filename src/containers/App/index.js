@@ -39,7 +39,7 @@ const App = () => {
       .replace(/\D/g, '')
       .replace(/(\d{2})(\d)/, '$1 $2')
       .replace(/(\d{4})(\d)/, '$1-$2')
-      .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
+      .replace(/(\d{4})-(\d)(\d{3})/, '$1$2-$3')
       .replace(/(-\d{4})\d+?$/, '$1');
   };
 
@@ -214,6 +214,7 @@ const App = () => {
             <Input
               type="tel"
               name="phone"
+              maxLength="13"
               placeholder="Insira seu telefone (e.g.: 41 99999-9999)"
               {...register('phone', {
                 onChange: (event) => {
