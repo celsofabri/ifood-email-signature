@@ -23,6 +23,8 @@ import {
 } from './styled';
 import colors from 'assets/global/colors';
 import fonts from 'assets/global/fonts';
+import logoFaster from 'assets/images/faster-logo.png';
+import logoIfood from 'assets/images/ifood-logo.png';
 
 const App = () => {
   const { register, watch } = useForm();
@@ -195,11 +197,7 @@ const App = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src={
-                    company === 'faster'
-                      ? 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/faster-logo.svg?token=GHSAT0AAAAAABLUZITYKLH2GLF47BWZYPNYYQKLNCA'
-                      : 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/ifood-logo.svg?token=GHSAT0AAAAAABLUZITZXUJZKKE7AE7FKZPMYQKLN3A'
-                  }
+                  src={company === 'faster' ? logoFaster : logoIfood}
                   width={company === 'faster' ? 200 : 150}
                   height="auto"
                   alt={company === 'faster' ? 'Faster' : 'iFood'}
