@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { StyledWrapper } from 'assets/global/styled';
 import colors from 'assets/global/colors';
+import fonts from 'assets/global/fonts';
 import iconCompany from 'assets/images/icon-company.svg';
 
 export const StyledSignature = styled.section`
@@ -79,21 +80,13 @@ export const StyledSignatureActions = styled.div`
 `;
 
 export const StyledSignaturePreview = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   width: 45%;
-  padding: 32px;
-  background-color: ${colors.gray50};
 
   @media screen and (max-width: 768px) {
     width: 100%;
     margin-bottom: 50px;
   }
-`;
-
-export const StyledSignaturePreviewContainer = styled.div`
-  display: block;
 `;
 
 export const StyledSignatureImage = styled.div`
@@ -109,20 +102,24 @@ export const StyledSignatureInfo = styled.div`
 
 export const StyledSignatureName = styled.h3`
   margin: 0;
+  font-family: ${fonts.primary};
   color: ${colors.red400};
 `;
 
 export const StyledSignatureRole = styled.p`
+  font-family: ${fonts.secondary};
   font-size: 15px;
   font-weight: 700;
   color: ${colors.black};
 `;
 
 export const StyledSignatureEmail = styled.p`
+  font-family: ${fonts.secondary};
   font-size: 15px;
 `;
 
 export const StyledSignaturePhone = styled.p`
+  font-family: ${fonts.secondary};
   font-size: 15px;
 `;
 

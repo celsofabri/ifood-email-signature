@@ -12,7 +12,6 @@ import {
   StyledSignatureFields,
   StyledSignatureActions,
   StyledSignaturePreview,
-  StyledSignaturePreviewContainer,
   StyledSignatureImage,
   StyledSignatureInfo,
   StyledSignatureName,
@@ -22,6 +21,7 @@ import {
   StyledNotice
 } from './styled';
 import colors from 'assets/global/colors';
+import fonts from 'assets/global/fonts';
 
 const App = () => {
   const { register, watch } = useForm();
@@ -107,70 +107,76 @@ const App = () => {
       </StyledSignatureHeader>
       <StyledWrapper>
         <StyledSignaturePreview ref={preview}>
-          <StyledSignaturePreviewContainer>
-            <StyledSignatureImage>
-              <a
-                href="https://admin.fstr.rocks/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={
-                    company === 'faster'
-                      ? 'https://admin.fstr.rocks/img/faster-brand.044e20fc.svg'
-                      : 'https://portal.ifood.com.br/static/media/ifood.480c271f.svg'
-                  }
-                  width={company === 'faster' ? 200 : 150}
-                  height="auto"
-                  alt="Faster"
-                />
-              </a>
-            </StyledSignatureImage>
-            <StyledSignatureInfo>
-              <StyledSignatureName
-                style={{
-                  margin: '0',
-                  color:
-                    company === 'faster'
-                      ? colors.blue400
-                      : colors.red400
-                }}
-              >
-                {name || 'Fabrício Bloisi'}
-              </StyledSignatureName>
+          <StyledSignatureImage>
+            <a
+              href={
+                company === 'faster'
+                  ? 'https://admin.fstr.rocks/'
+                  : 'https://ifood.com.br/'
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={
+                  company === 'faster'
+                    ? 'https://admin.fstr.rocks/img/faster-brand.044e20fc.svg'
+                    : 'https://portal.ifood.com.br/static/media/ifood.480c271f.svg'
+                }
+                width={company === 'faster' ? 200 : 150}
+                height="auto"
+                alt={company === 'faster' ? 'Faster' : 'iFood'}
+              />
+            </a>
+          </StyledSignatureImage>
+          <StyledSignatureInfo>
+            <StyledSignatureName
+              style={{
+                margin: '0',
+                fontFamily: fonts.primary,
+                color:
+                  company === 'faster'
+                    ? colors.blue400
+                    : colors.red400
+              }}
+            >
+              {name || 'Fabrício Bloisi'}
+            </StyledSignatureName>
 
-              <StyledSignatureRole
+            <StyledSignatureRole
+              style={{
+                margin: '2px 0',
+                fontFamily: fonts.secondary,
+                fontSize: '15px',
+                fontWeight: '700',
+                color: colors.black
+              }}
+            >
+              {role || 'Chief Executive Officer'}
+            </StyledSignatureRole>
+
+            <StyledSignatureEmail
+              style={{
+                margin: '2px 0',
+                fontFamily: fonts.secondary,
+                fontSize: '15px'
+              }}
+            >
+              {email || 'fabricio.bloisi@ifood.com.br'}
+            </StyledSignatureEmail>
+
+            {phone !== '' && (
+              <StyledSignaturePhone
                 style={{
                   margin: '2px 0',
-                  fontSize: '15px',
-                  fontWeight: '700',
-                  color: colors.black
-                }}
-              >
-                {role || 'Chief Executive Officer'}
-              </StyledSignatureRole>
-
-              <StyledSignatureEmail
-                style={{
-                  margin: '2px 0',
+                  fontFamily: fonts.secondary,
                   fontSize: '15px'
                 }}
               >
-                {email || 'fabricio.bloisi@ifood.com.br'}
-              </StyledSignatureEmail>
-
-              {phone !== '' && (
-                <StyledSignaturePhone
-                  style={{
-                    margin: '2px 0',
-                    fontSize: '15px'
-                  }}
-                >
-                  +55 {phone || '41 99999-9999'}
-                </StyledSignaturePhone>
-              )}
-            </StyledSignatureInfo>
-          </StyledSignaturePreviewContainer>
+                +55 {phone || '41 99999-9999'}
+              </StyledSignaturePhone>
+            )}
+          </StyledSignatureInfo>
         </StyledSignaturePreview>
         <StyledSignatureContainer>
           <StyledSignatureFields>
