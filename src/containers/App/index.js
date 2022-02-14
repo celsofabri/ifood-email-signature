@@ -197,8 +197,8 @@ const App = () => {
                 <img
                   src={
                     company === 'faster'
-                      ? 'https://celsofabri.github.io/ifood-email-signature/static/media/faster-logo.8dbeeb807653f1772712.png'
-                      : 'https://celsofabri.github.io/ifood-email-signature/static/media/ifood-logo.3eaa103846b4a87d6f6d.png'
+                      ? 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/faster-logo.png'
+                      : 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/ifood-logo.png'
                   }
                   width={company === 'faster' ? 200 : 150}
                   height="auto"
