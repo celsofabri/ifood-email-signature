@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { StyledWrapper } from 'assets/global/styled';
 import colors from 'assets/global/colors';
+import iconCompany from 'assets/images/icon-company.svg';
 
 export const StyledSignature = styled.section`
   display: block;
@@ -20,6 +21,23 @@ export const StyledSignatureHeader = styled.header`
   ${StyledWrapper} {
     justify-content: flex-end;
     align-items: center;
+  }
+
+  select {
+    padding-right: 48px;
+    font-weight: 700;
+    text-align: right;
+    border: none;
+    appearance: none;
+    background-image: url(${iconCompany});
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 24px auto;
+    outline: none;
+
+    &:hover {
+      color: ${colors.gray400};
+    }
   }
 `;
 
@@ -59,13 +77,21 @@ export const StyledSignatureActions = styled.div`
 `;
 
 export const StyledSignaturePreview = styled.div`
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 45%;
+  padding: 32px;
+  background-color: ${colors.gray50};
 
   @media screen and (max-width: 768px) {
     width: 100%;
-    margin-top: 50px;
+    margin-bottom: 50px;
   }
+`;
+
+export const StyledSignaturePreviewContainer = styled.div`
+  display: block;
 `;
 
 export const StyledSignatureImage = styled.div`

@@ -41,4 +41,5 @@ export const StyledSelect = styled.select`
   padding: 10px 20px;
   border: 1px solid ${colors.gray400};
   border-radius: 4px;
+  cursor: pointer;
 `;
