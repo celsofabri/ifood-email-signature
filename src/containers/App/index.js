@@ -120,8 +120,8 @@ const App = () => {
               <img
                 src={
                   company === 'faster'
-                    ? 'https://admin.fstr.rocks/img/faster-brand.044e20fc.svg'
-                    : 'https://portal.ifood.com.br/static/media/ifood.480c271f.svg'
+                    ? 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/faster-logo.svg?token=GHSAT0AAAAAABRQI6AR6BOUPGCRW2XCECRUYQKLE2A'
+                    : 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/ifood-logo.svg?token=GHSAT0AAAAAABRQI6AQF4K7MPJMJ3X6REHAYQKLFMQ'
                 }
                 width={company === 'faster' ? 200 : 150}
                 height="auto"
