@@ -1,18 +1,16 @@
 {
   "files": {
     "main.css": "./static/css/main.3ce23c5e.css",
-    "main.js": "./static/js/main.929921cc.js",
+    "main.js": "./static/js/main.bfa55459.js",
     "static/js/787.2619be1d.chunk.js": "./static/js/787.2619be1d.chunk.js",
-    "static/media/ifood-logo.png": "./static/media/ifood-logo.3eaa103846b4a87d6f6d.png",
-    "static/media/faster-logo.png": "./static/media/faster-logo.8dbeeb807653f1772712.png",
     "static/media/icon-company.svg": "./static/media/icon-company.da0ea033bc83acd7339b95230873c51d.svg",
     "index.html": "./index.html",
     "main.3ce23c5e.css.map": "./static/css/main.3ce23c5e.css.map",
-    "main.929921cc.js.map": "./static/js/main.929921cc.js.map",
+    "main.bfa55459.js.map": "./static/js/main.bfa55459.js.map",
     "787.2619be1d.chunk.js.map": "./static/js/787.2619be1d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3ce23c5e.css",
-    "static/js/main.929921cc.js"
+    "static/js/main.bfa55459.js"
   ]
 }
