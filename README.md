@@ -1,4 +1,4 @@
-# iFood/Faster E-mail Signature
+# iFood/Faster E-mail Signature Generator
 
 ## :space_invader: About
 
