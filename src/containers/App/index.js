@@ -23,8 +23,8 @@ import {
 } from './styled';
 import colors from 'assets/global/colors';
 import fonts from 'assets/global/fonts';
-import logoFaster from 'assets/images/faster-logo.png';
-import logoIfood from 'assets/images/ifood-logo.png';
+import logoFaster from 'https://celsofabri.github.io/ifood-email-signature/static/media/faster-logo.8dbeeb807653f1772712.png';
+import logoIfood from 'https://celsofabri.github.io/ifood-email-signature/static/media/ifood-logo.3eaa103846b4a87d6f6d.png';
 
 const App = () => {
   const { register, watch } = useForm();
