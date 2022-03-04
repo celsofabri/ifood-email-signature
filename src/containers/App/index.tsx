@@ -1,4 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  HTMLInputTypeAttribute
+} from 'react';
 import { useForm } from 'react-hook-form';
 import ClipboardJS from 'clipboard';
 import Input from 'components/Form/Input';
@@ -24,6 +29,12 @@ import {
 import colors from 'assets/global/colors';
 import fonts from 'assets/global/fonts';
 
+type InputBaseProps = {
+  type?: HTMLInputTypeAttribute;
+};
+
+type HTMLInputTypeAttribute = 'text' | 'tel' | 'email';
+
 const App = () => {
   const { register, watch } = useForm();
   const [name, setName] = useState('');
@@ -32,10 +43,10 @@ const App = () => {
   const [phone, setPhone] = useState('');
   const [copied, setCopied] = useState(false);
   const [company, setCompany] = useState('faster');
-  const preview = useRef(null);
-  const copyHTML = useRef(null);
+  const preview = useRef<HTMLElement>(null);
+  const copyHTML = useRef<string>('');
 
-  const phoneNumberMasked = (value) => {
+  const phoneNumberMasked = (value: string) => {
     return value
       .replace(/\D/g, '')
       .replace(/(\d{2})(\d)/, '$1 $2')
@@ -46,20 +57,22 @@ const App = () => {
 
   const clearRange = () => {
     setTimeout(() => {
-      window.getSelection().removeAllRanges();
+      window.getSelection()?.removeAllRanges();
       setCopied(false);
     }, 5000);
   };
 
   const copyText = () => {
-    window.getSelection().removeAllRanges();
+    window.getSelection()?.removeAllRanges();
 
-    const container = preview.current;
+    const container: HTMLElement | null = preview.current;
     const range = document.createRange();
 
-    range.selectNode(container);
-    window.getSelection().addRange(range);
-    document.execCommand('Copy');
+    if (container) {
+      range.selectNode(container);
+      window.getSelection()?.addRange(range);
+      document.execCommand('Copy');
+    }
 
     setCopied(true);
     clearRange();
@@ -84,23 +97,33 @@ const App = () => {
     });
   }, [copyHTML]);
 
+  type Items = [
+    {
+      label: string;
+      value: string;
+    }
+  ];
+
+  const items: Items = [
+    {
+      label: 'Faster',
+      value: 'faster'
+    }
+  ];
+
   return (
     <StyledSignature>
       <StyledSignatureHeader>
         <StyledWrapper>
           <Select
-            name="company"
             size="300px"
+            options={items}
             {...register('company', {
               onChange: (event) => {
                 setCompany(event.target.value);
               }
             })}
-          >
-            <option value="faster">Faster</option>
-            <option value="ifood">iFood</option>
-          </Select>
-
+          />
           <StyledNotice copied={copied} company={company}>
             Copiado!
           </StyledNotice>
@@ -112,7 +135,6 @@ const App = () => {
             <StyledSignatureFields>
               <Input
                 type="text"
-                name="name"
                 placeholder="Insira seu nome"
                 {...register('name', {
                   onChange: () => {
@@ -124,7 +146,6 @@ const App = () => {
             <StyledSignatureFields>
               <Input
                 type="text"
-                name="role"
                 placeholder="Insira seu cargo"
                 {...register('role', {
                   onChange: () => {
@@ -136,7 +157,6 @@ const App = () => {
             <StyledSignatureFields>
               <Input
                 type="email"
-                name="email"
                 placeholder="Insira seu e-mail"
                 {...register('email', {
                   onChange: () => {
@@ -149,7 +169,6 @@ const App = () => {
             <StyledSignatureFields>
               <Input
                 type="tel"
-                name="phone"
                 maxLength="13"
                 placeholder="Insira seu telefone (e.g.: 41 99999-9999)"
                 {...register('phone', {
@@ -170,16 +189,14 @@ const App = () => {
                     copyText();
                   }}
                   company={company}
-                >
-                  Copiar assinatura
-                </Button>
+                  children="Copiar assinatura"
+                />
                 <Button
                   type="button"
                   ref={copyHTML}
                   company={company}
-                >
-                  Copiar em HTML
-                </Button>
+                  children="Copiar em HTML"
+                />
               </StyledSignatureActions>
             </StyledSignatureFields>
           </StyledSignatureContainer>
