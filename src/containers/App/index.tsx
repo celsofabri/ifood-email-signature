@@ -1,9 +1,4 @@
-import React, {
-  useState,
-  useRef,
-  useEffect,
-  HTMLInputTypeAttribute
-} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import ClipboardJS from 'clipboard';
 import Input from 'components/Form/Input';
@@ -29,12 +24,6 @@ import {
 import colors from 'assets/global/colors';
 import fonts from 'assets/global/fonts';
 
-type InputBaseProps = {
-  type?: HTMLInputTypeAttribute;
-};
-
-type HTMLInputTypeAttribute = 'text' | 'tel' | 'email';
-
 const App = () => {
   const { register, watch } = useForm();
   const [name, setName] = useState('');
@@ -43,8 +32,8 @@ const App = () => {
   const [phone, setPhone] = useState('');
   const [copied, setCopied] = useState(false);
   const [company, setCompany] = useState('faster');
-  const preview = useRef<HTMLElement>(null);
-  const copyHTML = useRef<string>('');
+  const preview = useRef<any>(null);
+  const copyHTML = useRef<any>(null);
 
   const phoneNumberMasked = (value: string) => {
     return value

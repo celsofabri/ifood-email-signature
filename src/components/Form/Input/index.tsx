@@ -1,7 +1,12 @@
 import React from 'react';
 import { StyledField, StyledInput } from '../styled';
 
-const Input = React.forwardRef(({ ...props }, ref) => {
+type InputProps = {
+  type: 'text' | 'email' | 'tel';
+  placeholder: string;
+};
+
+const Input = React.forwardRef(({ ...props }: InputProps) => {
   return (
     <StyledField>
       <StyledInput {...props} />

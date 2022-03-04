@@ -2,18 +2,17 @@ import React, { HTMLAttributes } from 'react';
 import styled from 'styled-components';
 import colors from 'assets/global/colors';
 
-interface ButtonProps extends HTMLAttributes<HTMLDivElement> {
+interface FieldProps extends HTMLAttributes<HTMLDivElement> {
+  size: string;
+  [property: string]: any;
+}
+interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   company: string;
   children: React.ReactNode;
   [property: string]: any;
 }
 
-interface InputProps extends HTMLAttributes<HTMLDivElement> {
-  size: string;
-  [property: string]: any;
-}
-
-export const StyledField = styled.div<InputProps>`
+export const StyledField = styled.div<FieldProps>`
   display: block;
   width: ${(props) => (props.size ? props.size : '100%')};
 `;
