@@ -1,28 +1,37 @@
-import React from 'react';
+import React, { Ref } from 'react';
 import { StyledField, StyledSelect } from '../styled';
 
-type Props = {
-  size: string;
-  options: [
-    {
-      label: string;
-      value: string;
-    }
-  ];
+type Items = {
+  label: string;
+  value: string;
 };
 
-const Input = React.forwardRef((props: Props, ref) => {
-  const { size, options } = props;
+type SelectProps = {
+  size: string;
+  options: Items[];
+};
 
-  return (
-    <StyledField ref={ref} size={size}>
-      <StyledSelect>
-        {options.map((option) => {
-          return <option value={option.value}>{option.label}</option>;
-        })}
-      </StyledSelect>
-    </StyledField>
-  );
-});
+const Select = React.forwardRef(
+  ({ ...props }: SelectProps, ref: Ref<HTMLSelectElement>) => {
+    const { size, options } = props;
 
-export default Input;
+    return (
+      <StyledField size={size}>
+        <StyledSelect ref={ref}>
+          {options.map((option, index) => {
+            return (
+              <option
+                key={`${option.value}-${index}`}
+                value={option.value}
+              >
+                {option.label}
+              </option>
+            );
+          })}
+        </StyledSelect>
+      </StyledField>
+    );
+  }
+);
+
+export default Select;

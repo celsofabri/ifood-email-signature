@@ -34,6 +34,16 @@ const App = () => {
   const [company, setCompany] = useState('faster');
   const preview = useRef<any>(null);
   const copyHTML = useRef<any>(null);
+  const items = [
+    {
+      label: 'Faster',
+      value: 'faster'
+    },
+    {
+      label: 'iFood',
+      value: 'ifood'
+    }
+  ];
 
   const phoneNumberMasked = (value: string) => {
     return value
@@ -85,20 +95,6 @@ const App = () => {
       clearRange();
     });
   }, [copyHTML]);
-
-  type Items = [
-    {
-      label: string;
-      value: string;
-    }
-  ];
-
-  const items: Items = [
-    {
-      label: 'Faster',
-      value: 'faster'
-    }
-  ];
 
   return (
     <StyledSignature>
