@@ -101,7 +101,6 @@ const App = () => {
       <StyledSignatureHeader>
         <StyledWrapper>
           <Select
-            size="300px"
             options={items}
             {...register('company', {
               onChange: (event) => {

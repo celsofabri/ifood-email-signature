@@ -7,17 +7,16 @@ type Items = {
 };
 
 type SelectProps = {
-  size: string;
   options: Items[];
 };
 
 const Select = React.forwardRef(
   ({ ...props }: SelectProps, ref: Ref<HTMLSelectElement>) => {
-    const { size, options } = props;
+    const { options } = props;
 
     return (
-      <StyledField size={size}>
-        <StyledSelect ref={ref}>
+      <StyledField style={{ width: '300px' }}>
+        <StyledSelect ref={ref} {...props}>
           {options.map((option, index) => {
             return (
               <option

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import colors from 'assets/global/colors';
 
 interface FieldProps extends HTMLAttributes<HTMLDivElement> {
-  size: string;
   [property: string]: any;
 }
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
@@ -14,7 +13,7 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
 
 export const StyledField = styled.div<FieldProps>`
   display: block;
-  width: ${(props) => (props.size ? props.size : '100%')};
+  width: 100%;
 `;
 
 export const StyledButton = styled.button<ButtonProps>`
