@@ -130,7 +130,10 @@ export const StyledSignaturePhone = styled.p`
   font-size: 15px;
 `;
 
-export const StyledNotice = styled.div`
+export const StyledNotice = styled.div<{
+  company: string;
+  copied: boolean;
+}>`
   position: fixed;
   bottom: 0;
   left: 0;

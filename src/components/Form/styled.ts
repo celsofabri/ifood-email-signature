@@ -1,12 +1,22 @@
+import React, { HTMLAttributes } from 'react';
 import styled from 'styled-components';
 import colors from 'assets/global/colors';
 
-export const StyledField = styled.div`
+interface FieldProps extends HTMLAttributes<HTMLDivElement> {
+  [property: string]: any;
+}
+interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+  company: string;
+  children: React.ReactNode;
+  [property: string]: any;
+}
+
+export const StyledField = styled.div<FieldProps>`
   display: block;
-  width: ${(props) => (props.size ? props.size : '100%')};
+  width: 100%;
 `;
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button<ButtonProps>`
   display: inline-block;
   padding: 10px 20px;
   color: ${(props) =>
