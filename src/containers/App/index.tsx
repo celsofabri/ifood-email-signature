@@ -31,17 +31,17 @@ const App = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [copied, setCopied] = useState(false);
-  const [company, setCompany] = useState('faster');
+  const [company, setCompany] = useState('ifood');
   const preview = useRef<any>(null);
   const copyHTML = useRef<any>(null);
   const items = [
     {
-      label: 'Faster',
-      value: 'faster'
-    },
-    {
       label: 'iFood',
       value: 'ifood'
+    },
+    {
+      label: 'Faster',
+      value: 'faster'
     }
   ];
 
@@ -188,22 +188,22 @@ const App = () => {
             <StyledSignatureImage>
               <a
                 href={
-                  company === 'faster'
-                    ? 'https://admin.fstr.rocks/'
-                    : 'https://ifood.com.br/'
+                  company === 'ifood'
+                    ? 'https://ifood.com.br/'
+                    : 'https://admin.fstr.rocks/'
                 }
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img
                   src={
-                    company === 'faster'
-                      ? 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/faster-logo.png'
-                      : 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/ifood-logo.png'
+                    company === 'ifood'
+                      ? 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/ifood-logo.png'
+                      : 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/faster-logo.png'
                   }
-                  width={company === 'faster' ? 200 : 150}
+                  width={company === 'ifood' ? 150 : 200}
                   height="auto"
-                  alt={company === 'faster' ? 'Faster' : 'iFood'}
+                  alt={company === 'ifood' ? 'iFood' : 'Faster'}
                 />
               </a>
             </StyledSignatureImage>
@@ -213,9 +213,9 @@ const App = () => {
                   margin: '0',
                   fontFamily: fonts.primary,
                   color:
-                    company === 'faster'
-                      ? colors.blue400
-                      : colors.red400
+                    company === 'ifood'
+                      ? colors.red400
+                      : colors.blue400
                 }}
               >
                 {name || 'Fabrício Bloisi'}
