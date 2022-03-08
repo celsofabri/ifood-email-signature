@@ -4,7 +4,10 @@ import ClipboardJS from 'clipboard';
 import Input from 'components/Form/Input';
 import Button from 'components/Form/Button';
 import Select from 'components/Form/Select';
+import { phoneNumberMasked } from 'utils/helpers';
 import { StyledWrapper } from 'assets/global/styled';
+import colors from 'assets/global/colors';
+import fonts from 'assets/global/fonts';
 import {
   StyledSignature,
   StyledSignatureHeader,
@@ -21,8 +24,6 @@ import {
   StyledSignaturePhone,
   StyledNotice
 } from './styled';
-import colors from 'assets/global/colors';
-import fonts from 'assets/global/fonts';
 
 const App = () => {
   const { register, watch } = useForm();
@@ -44,15 +45,6 @@ const App = () => {
       value: 'faster'
     }
   ];
-
-  const phoneNumberMasked = (value: string) => {
-    return value
-      .replace(/\D/g, '')
-      .replace(/(\d{2})(\d)/, '$1 $2')
-      .replace(/(\d{4})(\d)/, '$1-$2')
-      .replace(/(\d{4})-(\d)(\d{3})/, '$1$2-$3')
-      .replace(/(-\d{4})\d+?$/, '$1');
-  };
 
   const clearRange = () => {
     setTimeout(() => {
