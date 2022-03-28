@@ -86,6 +86,18 @@ export const StyledSignatureActions = styled.div`
   }
 `;
 
+export const StyledSignatureOptions = styled.div`
+  display: block;
+  margin: 0 -8px;
+
+  label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+`;
+
 export const StyledSignaturePreview = styled.div`
   display: block;
   width: 48.5%;
