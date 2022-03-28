@@ -22,8 +22,16 @@ import {
   StyledSignatureRole,
   StyledSignatureEmail,
   StyledSignaturePhone,
+  StyledSignatureSocial,
+  StyledSignatureSocialItem,
   StyledNotice
 } from './styled';
+import logoIfood from 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/ifood-logo.png';
+import logoFaster from 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/faster-logo.png';
+import iconFacebook from 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/icon-facebook.png';
+import iconTwitter from 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/icon-twitter.png';
+import iconInstagram from 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/icon-instagram.png';
+import iconYouTube from 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/icon-youtube.png';
 
 const App = () => {
   const { register, watch } = useForm();
@@ -33,6 +41,7 @@ const App = () => {
   const [phone, setPhone] = useState('');
   const [copied, setCopied] = useState(false);
   const [company, setCompany] = useState('ifood');
+  const [social, setSocial] = useState(true);
   const preview = useRef<any>(null);
   const copyHTML = useRef<any>(null);
   const items = [
@@ -188,11 +197,7 @@ const App = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src={
-                    company === 'ifood'
-                      ? 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/ifood-logo.png'
-                      : 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/faster-logo.png'
-                  }
+                  src={company === 'ifood' ? logoIfood : logoFaster}
                   width={company === 'ifood' ? 150 : 200}
                   height="auto"
                   alt={company === 'ifood' ? 'iFood' : 'Faster'}
@@ -245,6 +250,59 @@ const App = () => {
                 >
                   +55 {phone || '41 99999-9999'}
                 </StyledSignaturePhone>
+              )}
+
+              {social && (
+                <StyledSignatureSocial>
+                  <StyledSignatureSocialItem
+                    href="https://www.facebook.com/iFood"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <img
+                      src={iconFacebook}
+                      width="24"
+                      height="24"
+                      alt="Facebook"
+                    />
+                  </StyledSignatureSocialItem>
+                  <StyledSignatureSocialItem
+                    href="https://twitter.com/iFood"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <img
+                      src={iconTwitter}
+                      width="24"
+                      height="24"
+                      alt="Twitter"
+                    />
+                  </StyledSignatureSocialItem>
+                  <StyledSignatureSocialItem
+                    href="https://www.instagram.com/iFoodBrasil"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <img
+                      src={iconInstagram}
+                      width="24"
+                      height="24"
+                      alt="Instagram"
+                    />
+                  </StyledSignatureSocialItem>
+                  <StyledSignatureSocialItem
+                    href="https://www.youtube.com/ifood"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <img
+                      src={iconYouTube}
+                      width="24"
+                      height="24"
+                      alt="YouTube"
+                    />
+                  </StyledSignatureSocialItem>
+                </StyledSignatureSocial>
               )}
             </StyledSignatureInfo>
           </StyledSignaturePreview>

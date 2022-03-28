@@ -130,6 +130,15 @@ export const StyledSignaturePhone = styled.p`
   font-size: 15px;
 `;
 
+export const StyledSignatureSocial = styled.div`
+  margin: 8px -8px;
+`;
+
+export const StyledSignatureSocialItem = styled.a`
+  display: inline-block;
+  margin: 0 8px;
+`;
+
 export const StyledNotice = styled.div<{
   company: string;
   copied: boolean;
