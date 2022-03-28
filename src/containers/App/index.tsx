@@ -26,10 +26,12 @@ import {
   StyledSignatureSocialItem,
   StyledNotice
 } from './styled';
-import iconFacebook from 'assets/images/icon-facebook.png';
-import iconTwitter from 'assets/images/icon-twitter.png';
-import iconInstagram from 'assets/images/icon-instagram.png';
-import iconYouTube from 'assets/images/icon-youtube.png';
+import logoIfood from 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/ifood-logo.png';
+import logoFaster from 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/faster-logo.png';
+import iconFacebook from 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/icon-facebook.png';
+import iconTwitter from 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/icon-twitter.png';
+import iconInstagram from 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/icon-instagram.png';
+import iconYouTube from 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/icon-youtube.png';
 
 const App = () => {
   const { register, watch } = useForm();
@@ -195,11 +197,7 @@ const App = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src={
-                    company === 'ifood'
-                      ? 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/ifood-logo.png'
-                      : 'https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/faster-logo.png'
-                  }
+                  src={company === 'ifood' ? logoIfood : logoFaster}
                   width={company === 'ifood' ? 150 : 200}
                   height="auto"
                   alt={company === 'ifood' ? 'iFood' : 'Faster'}
