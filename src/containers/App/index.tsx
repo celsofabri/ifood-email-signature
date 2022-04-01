@@ -4,6 +4,8 @@ import ClipboardJS from 'clipboard';
 import Input from 'components/Form/Input';
 import Button from 'components/Form/Button';
 import Select from 'components/Form/Select';
+import Checkbox from 'components/Form/Checkbox';
+import Label from 'components/Form/Label';
 import { phoneNumberMasked } from 'utils/helpers';
 import { StyledWrapper } from 'assets/global/styled';
 import colors from 'assets/global/colors';
@@ -15,6 +17,7 @@ import {
   StyledSignatureContainer,
   StyledSignatureFields,
   StyledSignatureActions,
+  StyledSignatureOptions,
   StyledSignaturePreview,
   StyledSignatureImage,
   StyledSignatureInfo,
@@ -35,7 +38,7 @@ const App = () => {
   const [phone, setPhone] = useState('');
   const [copied, setCopied] = useState(false);
   const [company, setCompany] = useState('ifood');
-  const [social, setSocial] = useState(true);
+  const [socialChecked, setSocialChecked] = useState(true);
   const preview = useRef<any>(null);
   const copyHTML = useRef<any>(null);
   const items = [
@@ -161,6 +164,20 @@ const App = () => {
               />
             </StyledSignatureFields>
             <StyledSignatureFields>
+              <StyledSignatureOptions>
+                <Label htmlFor="social" company={company}>
+                  Active social network links
+                  <Checkbox
+                    {...register('social', {
+                      onChange: () => {
+                        setSocialChecked(!socialChecked);
+                      }
+                    })}
+                  />
+                </Label>
+              </StyledSignatureOptions>
+            </StyledSignatureFields>
+            <StyledSignatureFields>
               <StyledSignatureActions>
                 <Button
                   type="button"
@@ -250,12 +267,13 @@ const App = () => {
                 </StyledSignaturePhone>
               )}
 
-              {social && (
-                <StyledSignatureSocial>
+              {socialChecked && (
+                <StyledSignatureSocial style={{ marginTop: '8px' }}>
                   <StyledSignatureSocialItem
                     href="https://www.facebook.com/iFood"
                     target="_blank"
                     rel="noreferrer noopener"
+                    style={{ marginLeft: '0' }}
                   >
                     <img
                       src="https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/icon-facebook.png"
@@ -268,6 +286,7 @@ const App = () => {
                     href="https://twitter.com/iFood"
                     target="_blank"
                     rel="noreferrer noopener"
+                    style={{ marginLeft: '16px' }}
                   >
                     <img
                       src="https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/icon-twitter.png"
@@ -280,6 +299,7 @@ const App = () => {
                     href="https://www.instagram.com/iFoodBrasil"
                     target="_blank"
                     rel="noreferrer noopener"
+                    style={{ marginLeft: '16px' }}
                   >
                     <img
                       src="https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/icon-instagram.png"
@@ -292,6 +312,7 @@ const App = () => {
                     href="https://www.youtube.com/ifood"
                     target="_blank"
                     rel="noreferrer noopener"
+                    style={{ marginLeft: '16px' }}
                   >
                     <img
                       src="https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/icon-youtube.png"

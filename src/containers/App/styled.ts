@@ -86,6 +86,18 @@ export const StyledSignatureActions = styled.div`
   }
 `;
 
+export const StyledSignatureOptions = styled.div`
+  display: block;
+  margin: 0 -8px;
+
+  label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+`;
+
 export const StyledSignaturePreview = styled.div`
   display: block;
   width: 48.5%;
@@ -131,12 +143,17 @@ export const StyledSignaturePhone = styled.p`
 `;
 
 export const StyledSignatureSocial = styled.div`
-  margin: 8px -8px;
+  display: block;
+  margin-top: 8px;
 `;
 
 export const StyledSignatureSocialItem = styled.a`
   display: inline-block;
-  margin: 0 8px;
+  margin-left: 16px;
+
+  &:first-child {
+    margin-left: 0;
+  }
 `;
 
 export const StyledNotice = styled.div<{
