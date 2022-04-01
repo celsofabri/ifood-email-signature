@@ -143,12 +143,17 @@ export const StyledSignaturePhone = styled.p`
 `;
 
 export const StyledSignatureSocial = styled.div`
-  margin: 8px -8px;
+  display: block;
+  margin-top: 8px;
 `;
 
 export const StyledSignatureSocialItem = styled.a`
   display: inline-block;
-  margin: 0 8px;
+  margin-left: 16px;
+
+  &:first-child {
+    margin-left: 0;
+  }
 `;
 
 export const StyledNotice = styled.div<{

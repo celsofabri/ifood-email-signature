@@ -268,11 +268,12 @@ const App = () => {
               )}
 
               {socialChecked && (
-                <StyledSignatureSocial>
+                <StyledSignatureSocial style={{ marginTop: '8px' }}>
                   <StyledSignatureSocialItem
                     href="https://www.facebook.com/iFood"
                     target="_blank"
                     rel="noreferrer noopener"
+                    style={{ marginLeft: '0' }}
                   >
                     <img
                       src="https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/icon-facebook.png"
@@ -285,6 +286,7 @@ const App = () => {
                     href="https://twitter.com/iFood"
                     target="_blank"
                     rel="noreferrer noopener"
+                    style={{ marginLeft: '16px' }}
                   >
                     <img
                       src="https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/icon-twitter.png"
@@ -297,6 +299,7 @@ const App = () => {
                     href="https://www.instagram.com/iFoodBrasil"
                     target="_blank"
                     rel="noreferrer noopener"
+                    style={{ marginLeft: '16px' }}
                   >
                     <img
                       src="https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/icon-instagram.png"
@@ -309,6 +312,7 @@ const App = () => {
                     href="https://www.youtube.com/ifood"
                     target="_blank"
                     rel="noreferrer noopener"
+                    style={{ marginLeft: '16px' }}
                   >
                     <img
                       src="https://raw.githubusercontent.com/celsofabri/ifood-email-signature/master/src/assets/images/icon-youtube.png"
